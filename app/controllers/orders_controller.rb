@@ -1,6 +1,4 @@
 class OrdersController < ApplicationController
-  # app/controllers/orders_controller.rb
-class OrdersController < ApplicationController
   def new
     @order = Order.new
   end
@@ -31,8 +29,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:total_amount)
+    params.require(:order).permit(:total_amount, :coupon_code)
   end
-end
-
 end
