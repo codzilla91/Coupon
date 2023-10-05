@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_05_120016) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_05_134840) do
   create_table "books_coupons", force: :cascade do |t|
     t.string "code"
     t.decimal "discount", precision: 8, scale: 2
     t.datetime "expires_at"
     t.integer "max_uses"
     t.integer "used_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "total_amount", precision: 8, scale: 2
+    t.string "coupon_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
