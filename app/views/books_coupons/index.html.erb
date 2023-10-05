@@ -1,0 +1,24 @@
+<h1>Coupons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Discount</th>
+      <th>Expires At</th>
+      <th>Max Uses</th>
+      <th>Used Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books_coupons.each do |coupon| %>
+      <tr>
+        <td><%= coupon.code %></td>
+        <td><%= number_to_currency(coupon.discount) %></td>
+        <td><%= coupon.expires_at %></td>
+        <td><%= coupon.max_uses %></td>
+        <td><%= coupon.used_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

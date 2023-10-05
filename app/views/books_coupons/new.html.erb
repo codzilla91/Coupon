@@ -1,0 +1,25 @@
+<%= form_with(model: @books_coupon, url: books_coupons_path) do |form| %>
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discount %>
+    <%= form.number_field :discount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expires_at %>
+    <%= form.datetime_field :expires_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_uses %>
+    <%= form.number_field :max_uses %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Coupon' %>
+  </div>
+<% end %>
