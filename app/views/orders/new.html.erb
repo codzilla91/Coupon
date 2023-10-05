@@ -1,0 +1,19 @@
+<%= link_to '折價券', books_coupons_path %>
+<%= link_to '新增折價券', new_books_coupon_path %>
+
+
+<%= form_with(model: @order, url: orders_path) do |form| %>
+  <div class="field">
+    <%= form.label :total_amount %>
+    <%= form.number_field :total_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coupon_code %>
+    <%= form.text_field :coupon_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Place Order' %>
+  </div>
+<% end %>
